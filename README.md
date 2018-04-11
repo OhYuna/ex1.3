@@ -10,10 +10,7 @@ int main(void)
 
 	for (a = 2.0; a <= 100.0; a++)
 	{
-		if (a == 100)
-			printf("%.0lf/%.0lf ", b, a);
-
-		else if (m % 2 == 0) {
+		if (m % 2 == 0 && a != 100) {
 			temp = a;
 			printf("%.0lf/%.0lf - ", b, a);
 		}
@@ -22,16 +19,19 @@ int main(void)
 			temp = -1 * a;
 			printf("%.0lf/%.0lf + ", b, a);
 		}
+		else {
+			temp = a;
+			printf("%.0lf/%.0lf ", b, a);
+		}
 
 		if (m % 10 == 0)
 			printf("\n");
 
 		sum += b / temp;
-
 		b++;
 		m++;
 	}
-
-	printf(" = %lf \n", sum);
-	return 0;
+		printf(" = %lf \n", sum);
+		return 0;
+	
 }
