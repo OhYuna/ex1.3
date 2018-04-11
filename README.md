@@ -1,2 +1,37 @@
-# ex1.3
-1/2 - 2/3 + 3/4 - 4/5 +.... +99/100
+#include <stdio.h>
+
+int main(void)
+{
+	float a;
+	float b = 1.0;
+	float temp;
+	float sum = 0;
+	int m = 2;
+
+	for (a = 2.0; a <= 100.0; a++)
+	{
+		if (a == 100)
+			printf("%.0lf/%.0lf ", b, a);
+
+		else if (m % 2 == 0) {
+			temp = a;
+			printf("%.0lf/%.0lf - ", b, a);
+		}
+
+		else if (m % 2 != 0) {
+			temp = -1 * a;
+			printf("%.0lf/%.0lf + ", b, a);
+		}
+
+		if (m % 10 == 0)
+			printf("\n");
+
+		sum += b / temp;
+
+		b++;
+		m++;
+	}
+
+	printf(" = %lf \n", sum);
+	return 0;
+}
